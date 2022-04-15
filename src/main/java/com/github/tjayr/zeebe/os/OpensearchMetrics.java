@@ -12,7 +12,7 @@ import io.prometheus.client.Gauge;
 import io.prometheus.client.Histogram;
 
 public class OpensearchMetrics {
-  private static final String NAMESPACE = "zeebe_elasticsearch_exporter";
+  private static final String NAMESPACE = "zeebe_opensearch_exporter";
   private static final String PARTITION_LABEL = "partition";
 
   private static final Histogram FLUSH_DURATION =

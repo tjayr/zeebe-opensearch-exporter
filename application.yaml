@@ -1,0 +1,41 @@
+zeebe:
+  broker:
+    exporters:
+      opensearch:
+        className: com.github.tjayr.zeebe.os.OpensearchExporter
+        jarPath: exporters/zeebe-opensearch-exporter.jar
+        args:
+          url: http://opensearch:9200
+          bulk:
+            delay: 5
+            size: 1000
+            memoryLimit: 10485760
+
+          authentication:
+            username: admin
+            password: admin
+
+          index:
+            prefix: zeebe-record
+            createTemplate: true
+
+            numberOfShards: 3
+            numberOfReplicas: 0
+
+            command: false
+            event: true
+            rejection: false
+
+            deployment: true
+            process: true
+            error: true
+            incident: true
+            job: true
+            jobBatch: true
+            message: true
+            messageSubscription: true
+            variable: true
+            variableDocument: true
+            processInstance: true
+            processInstanceCreation: true
+            processMessageSubscription: true

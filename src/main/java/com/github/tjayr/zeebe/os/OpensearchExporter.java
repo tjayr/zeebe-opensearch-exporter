@@ -45,7 +45,7 @@ public class OpensearchExporter implements Exporter {
 
     validate(configuration);
 
-    context.setFilter(new ElasticsearchRecordFilter(configuration));
+    context.setFilter(new OpensearchRecordFilter(configuration));
   }
 
   @Override
@@ -69,7 +69,7 @@ public class OpensearchExporter implements Exporter {
     try {
       client.close();
     } catch (final Exception e) {
-      log.warn("Failed to close elasticsearch client", e);
+      log.warn("Failed to close Opensearch client", e);
     }
 
     log.info("Exporter closed");
@@ -94,7 +94,7 @@ public class OpensearchExporter implements Exporter {
     if (configuration.index.prefix != null && configuration.index.prefix.contains("_")) {
       throw new ExporterException(
           String.format(
-              "Elasticsearch prefix must not contain underscore. Current value: %s",
+              "Opensearch prefix must not contain underscore. Current value: %s",
               configuration.index.prefix));
     }
 
@@ -108,14 +108,14 @@ public class OpensearchExporter implements Exporter {
     if (numberOfShards != null && numberOfShards < 1) {
       throw new ExporterException(
           String.format(
-              "Elasticsearch numberOfShards must be >= 1. Current value: %d", numberOfShards));
+              "Opensearch numberOfShards must be >= 1. Current value: %d", numberOfShards));
     }
 
     final Integer numberOfReplicas = configuration.index.getNumberOfReplicas();
     if (numberOfReplicas != null && numberOfReplicas < 0) {
       throw new ExporterException(
           String.format(
-              "Elasticsearch numberOfReplicas must be >= 0. Current value: %d", numberOfReplicas));
+              "Opensearch numberOfReplicas must be >= 0. Current value: %d", numberOfReplicas));
     }
   }
 
@@ -215,11 +215,11 @@ public class OpensearchExporter implements Exporter {
     }
   }
 
-  private static class ElasticsearchRecordFilter implements Context.RecordFilter {
+  private static class OpensearchRecordFilter implements Context.RecordFilter {
 
     private final OpensearchExporterConfiguration configuration;
 
-    ElasticsearchRecordFilter(final OpensearchExporterConfiguration configuration) {
+    OpensearchRecordFilter(final OpensearchExporterConfiguration configuration) {
       this.configuration = configuration;
     }
 

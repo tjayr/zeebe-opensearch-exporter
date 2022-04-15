@@ -8,9 +8,7 @@
 package com.github.tjayr.zeebe.os;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.camunda.zeebe.exporter.dto.BulkItemError;
-import io.camunda.zeebe.exporter.dto.BulkResponse;
-import io.camunda.zeebe.exporter.dto.PutIndexTemplateResponse;
+import com.github.tjayr.zeebe.os.dto.*;
 import io.camunda.zeebe.protocol.record.ValueType;
 import io.camunda.zeebe.protocol.record.Record;
 import io.camunda.zeebe.util.VersionUtil;
