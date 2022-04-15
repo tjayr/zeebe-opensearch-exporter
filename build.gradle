@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.tjayr'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'io.camunda:zeebe-exporter-api:8.0.0'
+    implementation 'io.camunda:zeebe-protocol:8.0.0'
+    implementation 'io.camunda:zeebe-util:8.0.0'
+    implementation 'org.opensearch.client:opensearch-rest-high-level-client:1.3.1'
+    //implementation 'org.elasticsearch.client:elasticsearch-rest-client'
+    //implementation 'org.elasticsearch:elasticsearch-x-content'
+//    implementation 'org.apache.httpcomponents:httpasyncclient'
+//    implementation 'org.apache.httpcomponents:httpclient'
+//    implementation 'org.apache.httpcomponents:httpcore-nio'
+//    implementation 'org.apache.httpcomponents:httpcore'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.2'
+
+    implementation 'io.prometheus:simpleclient:0.15.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
