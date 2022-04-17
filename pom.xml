@@ -4,10 +4,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>opensearch-zeebe-exporter</artifactId>
+    <artifactId>zeebe-opensearch-exporter</artifactId>
     <packaging>jar</packaging>
     <groupId>com.github.tjayr</groupId>
-    <version>1.0.1</version>
+    <version>0.0.1</version>
 
     <name>Zeebe Opensearch Exporter</name>
 

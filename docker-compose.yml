@@ -14,7 +14,7 @@ services:
     restart: always
     volumes:
       - zeebe:/usr/local/zeebe/data
-      - ./target/opensearch-zeebe-exporter-1.0.1-jar-with-dependencies.jar:/usr/local/zeebe/exporters/zeebe-opensearch-exporter.jar
+      - ./target/zeebe-opensearch-exporter-0.0.1-jar-with-dependencies.jar:/usr/local/zeebe/exporters/zeebe-opensearch-exporter.jar
       - ./application.yaml:/usr/local/zeebe/config/application.yaml
     networks:
       - opensearch-net
